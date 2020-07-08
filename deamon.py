@@ -14,7 +14,7 @@ def on_start_cb(channel, event):
  
     c = channel.get('channel')
     print "%s has entered the application" % c.json.get('name')
-    number = c.json.get('caller')['number']
+    number = c.json.get('dialplan')['exten']
     print "Number is %s" % number
 
     c.play(media='sound:your')
