@@ -4,7 +4,7 @@
   tasks:
   - name: install Asterisk
     apt:
-      name: apache2
+      name: asterisk
   - name: create http.conf
     template:
       src: sample_http.conf
