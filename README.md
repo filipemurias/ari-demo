@@ -5,7 +5,7 @@ Uses [Asterisk ARI Python library](https://github.com/asterisk/ari-py).
 
 # Installation
 * Install Python ARI library with `pip install ari`
-* Clone from git repository: git clone https://github.com/filipemurias/ari-demo.git
+* Clone code from git repository with `git clone https://github.com/filipemurias/ari-demo.git`
 * Update your Asterisk details (URL, username and password) in deamon.py
 * Run `python deamon.py`
 
