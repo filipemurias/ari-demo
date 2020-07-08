@@ -1,0 +1,26 @@
+---
+- hosts: asterisk-server
+  remote_user: root
+  tasks:
+  - name: install Asterisk
+    apt:
+      name: apache2
+  - name: create http.conf
+    template:
+      src: sample_http.conf
+      dest: /etc/asterisk/http.conf
+  - name: create ari.conf
+    template:
+      src: sample_ari.conf
+      dest: /etc/asterisk/ari.conf
+  - name: update extensions.conf
+    blockinfile:
+      backup: yes
+      path: /etc/asterisk/extensions.conf
+      block: |
+        [ARI demo]
+        ; Dial any 6 digits number to execute the ARI application
+        exten => _XXXXXX,1,Answer
+        exten => _XXXXXX,n,Stasis(ari-demo)
+        exten => _XXXXXX,n,Hangup
+---
